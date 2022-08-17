@@ -10,7 +10,7 @@ $.ajaxPrefilter(function(options){
         options.headers = { Authorization: localStorage.getItem('token')||''}
     }
     options.complete =function(res){
-        console.log('执行了complete回调')
+        // console.log('执行了complete回调')
         // 通过responseJSON获取服务器返回的数据
         // console.log(res)
         

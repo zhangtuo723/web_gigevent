@@ -23,6 +23,8 @@ $(function(){
 })
 
 // 获取用户基本信息
+// 为什么写在接口函数外面？
+// 这样子这个方法相当于window的属性了，iframe里面的子页面可以window.parent.getUserInfo()调用了
 function getUserInfo(){
 
     $.ajax({
@@ -65,13 +67,13 @@ function renderAvatar(user){
     if(user.user_pic!==null){
         // 渲染图片图像
         $('.layui-nav-img').attr('src',user.user_pic).show()
-        $('text-avatar').hide()
+        $('.text-avatar').hide()
     }else{
         // 渲染文本图像
         $('.layui-nav-img').hide()
         // 字符串转大写
         var first = name[0].toUpperCase()
-        $('text-avatar').html(first).show()
+        $('.text-avatar').html(first).show()
 
     }
 }
